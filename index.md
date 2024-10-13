@@ -151,7 +151,7 @@ Slide 7
 
 - useQuery Config Options
   - `refetchInterval` - defines a interval in milliseconds after which all queries will re fetch
-  - `refetchOnWindowFocus` - boolean value to fe refetch query on windows focus
+  - `refetchOnWindowFocus` - boolean value to refetch query on windows focus
   - `gcTime` - defines Garbage Collection time in milliseconds that unused/inactive cache data remains in memory.
   - `staleTime` - defines a stale time in milliseconds after data is considered stale
   - `refetchOnMount` -
@@ -323,4 +323,3 @@ Slide 15
 
   // Return JSX based on data and error state
   }
-
