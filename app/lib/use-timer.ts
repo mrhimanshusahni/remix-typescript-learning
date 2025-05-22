@@ -20,7 +20,7 @@ export const useTimer = ({ time = 30 }: UseTimerProps) => {
 
   const reset = () => {
     setIsRunning(false);
-    setTimeLeft(30);
+    setTimeLeft(time);
   };
 
   const clear = () => {
@@ -39,6 +39,10 @@ export const useTimer = ({ time = 30 }: UseTimerProps) => {
 
     if (!isRunning || timeLeft === 0) {
       clear();
+    }
+
+    if(isRunning && timerLeft ===0){
+      reset();
     }
 
     return () => clear();
