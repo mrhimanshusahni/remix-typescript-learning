@@ -56,13 +56,17 @@ const fetchSearchResults = async (query) => {
 export default function SearchComponent() {
   const [isOpen, setIsOpen] = useState(false);
   const [inputValue, setInputValue] = useState("");
-  const commandRef = useRef(null);
+  const commandRef = useRef<HTMLDivElement | null>(null);
   const debouncedSearch = useDebounce(inputValue, 300);
 
   // Close dropdown when clicking outside
   useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (commandRef.current && !commandRef.current.contains(event.target)) {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        commandRef.current &&
+        event.target instanceof Node &&
+        !commandRef.current.contains(event.target)
+      ) {
         setIsOpen(false);
       }
     };
